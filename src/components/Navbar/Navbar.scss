@@ -1,0 +1,217 @@
+.app__navbar {
+  width: 100%;
+  height: 87px;
+  padding: 21px 48px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.05);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app__navbar-logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  img {
+    width: 102px;
+    height: 44.5px;
+    margin: 0 16px 0 0;
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: left;
+    color: var(--color-drak-blue);
+  }
+}
+
+.app__navbar-menu {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+
+  &-items {
+    line-height: 1.5;
+    margin-right: 32px;
+    list-style: none;
+    position: relative;
+    &-link {
+      color: var(--color-black);
+      text-decoration: none;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        bottom: 2.5px;
+        left: 0;
+        background-color: var(--color-drak-blue);
+        transform-origin: bottom left;
+        transition: transform 0.3s ease-out;
+        transform: scaleX(0);
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+      }
+    }
+
+    &-link.activePage {
+      border-bottom: solid 3px var(--color-drak-blue);
+      padding-bottom: 5px;
+    }
+
+    &-link:first-letter {
+      text-transform: uppercase;
+    }
+  }
+}
+
+.app__navbar-icon {
+  display: none;
+}
+
+// ============ Dropdown Menu==============
+.app__navbar-dropdown {
+  background-color: var(--color-white);
+  width: 180px;
+  position: absolute;
+  top: 35px;
+  list-style: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  box-shadow: 2px 4px 10px 2px rgba(0, 0, 0, 0.05);
+
+  &-links {
+    height: 100%;
+    width: 100%;
+    line-height: 2.5;
+    list-style: none;
+    text-decoration: none;
+    color: var(--color-black);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:hover {
+      color: var(--color-drak-blue);
+    }
+
+    &:hover::after {
+      content: "";
+      display: block;
+      background: url("../../assets/arrow-right.svg") no-repeat;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.app__navbar-dropdown .clicked {
+  display: none;
+}
+
+@media screen and (max-width: 960px) {
+  .app__navbar {
+    height: 58px;
+    padding: 17px 16px 16px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05);
+  }
+  .app__navbar-logo {
+    img {
+      width: 59px;
+      height: 25px;
+      margin: 0 16px 0 0;
+    }
+  }
+  .app__navbar-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    opacity: 0;
+    transition: all 0.5s ease;
+    font-size: var(--font-medium);
+
+    &-items {
+      line-height: 4;
+      margin: 0;
+      text-align: right;
+
+      a {
+        font-weight: 600;
+      }
+
+      &-link::after {
+        content: none;
+      }
+    }
+
+    button {
+      margin-top: 40px;
+    }
+
+    // &-items:hover {
+    //   a {
+    //     color: var(--color-drak-blue);
+    //   }
+    // }
+  }
+  .app__navbar-menu.active {
+    background: var(--color-white);
+    right: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+    width: 75%;
+    margin-left: 40px;
+    padding: 50px 40px 0 0;
+    box-shadow: -200px 0 8px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  .app__navbar-dropdown {
+    display: contents;
+    font-size: var(--font-medium);
+
+    li {
+      text-align: right;
+      direction: rtl;
+    }
+
+    a {
+      font-weight: 400;
+      color: var(--color-black);
+    }
+  }
+
+  .app__navbar-logo p {
+    display: none;
+  }
+
+  .app__navbar-icon {
+    display: block;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 20;
+    transform: translate(-100%, 60%);
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-dark-blue-2);
+  }
+}

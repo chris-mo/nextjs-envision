@@ -1,0 +1,28 @@
+.longCard {
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  padding: 24px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+.longCard h3 {
+  font-size: var(--font-title3);
+  color: var(--color-white);
+}
+
+.longCard-left {
+  display: flex;
+  justify-content: end;
+}
+
+.longCard button {
+  width: 125px;
+}
