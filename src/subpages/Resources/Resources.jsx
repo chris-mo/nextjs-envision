@@ -1,7 +1,7 @@
 import React from "react";
 import { PageHero, LongCard } from "../../components";
 import "./Resources.scss";
-import "../Pages.scss";
+import "../subpages.scss";
 
 function Resources() {
   return (

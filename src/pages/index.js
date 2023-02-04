@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Navbar, Footer } from "../components";
 import { Home, WhatWeDo, Resources, GetInvolved, AboutUs } from "../subpages";
-import "./App.scss";
+import "../styles/globals.css";
 
 const index = () => {
   return (
