@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "../Button/Button";
-import "./LongCard2.scss";
+import "./LongCard2.module.scss";
 
 function LongCard2({ textInput }) {
   return (

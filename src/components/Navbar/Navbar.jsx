@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { VscClose } from "react-icons/vsc";
 import { RxHamburgerMenu } from "react-icons/rx";
-import "./Navbar.scss";
+import "./Navbar.module.scss";
 import { images } from "../../constants";
 import Button from "../Button/Button";
 import MenuItems from "./MenuItems";

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Footer.scss";
+import "./Footer.module.scss";
 import Button from "../Button/Button";
 import { images } from "../../constants";
 import linksData from "../../data/linksData";

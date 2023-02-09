@@ -1,5 +1,5 @@
 import React from "react";
-import "./PageHero.scss";
+import "./PageHero.module.scss";
 import img from "../../assets/Trial.jpg";
 
 function PageHero({ headingText }) {

@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../Button/Button";
 import img from "../../assets/Trial.jpg";
-import "./LongCard.scss";
+import "./LongCard.module.scss";
 
 function LongCard({ textInput }) {
   return (
